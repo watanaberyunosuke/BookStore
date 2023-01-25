@@ -15,6 +15,11 @@ namespace BookStore.Models
             BookId = bookId;
             BookTitle = bookTitle;
         }
+
+        public Book()
+        {
+
+        }
         
     }
 
