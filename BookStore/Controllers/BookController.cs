@@ -49,14 +49,22 @@ namespace BookStore.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "BookId,BookTitle")] Book book)
         {
-            if (ModelState.IsValid)
+            try
             {
-                book.BookId = Guid.NewGuid();
-                db.Books.Add(book);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    book.BookId = Guid.NewGuid();
+                    db.Books.Add(book);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-
+            catch (DataException dex)
+            {
+                // Log Error
+                ModelState.AddModelError("", dex.Message);
+            }
+            
             return View(book);
         }
 
@@ -92,13 +100,20 @@ namespace BookStore.Controllers
         }
 
         // GET: Book/Delete/5
-        public ActionResult Delete(Guid? id)
+        public ActionResult Delete(Guid? id, bool? saveChangesError = false)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewBag.ErrorMessage = "Deletion Failed";
+            }
+            
             Book book = db.Books.Find(id);
+            
             if (book == null)
             {
                 return HttpNotFound();
