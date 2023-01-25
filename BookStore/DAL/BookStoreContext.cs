@@ -10,7 +10,7 @@ namespace BookStore.DAL
         protected readonly Microsoft.Extensions.Configuration.IConfiguration Configuration;
         public BookStoreContext() : base("BookStoreContext")
         {
-            
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BookStoreContext>());
         }
 
         public DbSet<Book> Books { get; set; }

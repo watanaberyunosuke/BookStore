@@ -1,3 +1,19 @@
 
 P
  BookStore/Views/Book/Edit.cshtml,0/6/061e694d6585fdf804ad7aa40bc5336cadf3c8ae
+J
+BookStore/Views/Web.config,a/1/a1782574902e6b8faa1ffdf42c43d23ecdfe8748
+U
+%BookStore/Views/Shared/_Layout.cshtml,3/d/3d593f65a52724d6ef572b02ffd8da98e0225929
+Q
+!BookStore/Views/Home/Index.cshtml,9/1/91c9130e26210f6a13a97c7166852bcc9e585df4
+Q
+!BookStore/Views/Book/Index.cshtml,4/9/49728890c4990467327c3c8aa73139c14d90e565
+R
+"BookStore/Views/Book/Create.cshtml,9/e/9ec9705ee66edc197679a11411b85e8dad2ab515
+J
+BookStore/BookStore.csproj,7/8/78d571e829ec1585e67dd79e1a9d31bcab40975f
+S
+#BookStore/App_Start/BundleConfig.cs,5/c/5c22c1be4fef7e229b3821c40fb651b94f2d5fdb
+U
+%BookStore/Migrations/Configuration.cs,8/3/83dd559c19fc36ad4fa6025281a2df6f19633592
