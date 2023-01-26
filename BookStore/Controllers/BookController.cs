@@ -3,10 +3,11 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 using System.Web.Mvc;
+using PagedList.Mvc;
 using BookStore.DAL;
 using BookStore.Models;
+using PagedList;
 
 namespace BookStore.Controllers
 {
@@ -15,13 +16,13 @@ namespace BookStore.Controllers
         private BookStoreContext db = new BookStoreContext();
 
         // GET: Book
-        public ActionResult Index(string searchCriteria)
+        public ActionResult Index(string searchCriteria, int? pageNumber)
         {
             if(searchCriteria != null) {
-                return View(db.Books.Where(book => book.BookTitle.Contains(searchCriteria) || searchCriteria == null));
+                return View(db.Books.Where(book => book.BookTitle.Contains(searchCriteria) || searchCriteria == null).ToList().ToPagedList(pageNumber ?? 1, 3));
             } else
             {
-                return View(db.Books.ToList());
+                return View(db.Books.ToList().ToPagedList(pageNumber ?? 1, 3));
             }
         }
 

@@ -1,4 +1,6 @@
-﻿@model IEnumerable<BookStore.Models.Book>
+﻿@using PagedList
+@using PagedList.Mvc
+@model IEnumerable<BookStore.Models.Book>
 
 @{
     ViewBag.Title = "Index";
@@ -38,23 +40,27 @@ else
             <th></th>
         </tr>
 
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.BookId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BookTitle)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.BookId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.BookId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.BookId })
-            </td>
-        </tr>
-    }
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookTitle)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BookId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.BookId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BookId })
+                </td>
+            </tr>
+        }
 
     </table>
 }
+
+<!-- Paging -->
+<b>Page Number: </b>
+@Html.PagedListPager((IPagedList)Model, pageNumber => Url.Action("Index", new {pageNumber}))
 
 

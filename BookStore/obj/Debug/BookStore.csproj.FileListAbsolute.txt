@@ -259,3 +259,7 @@ C:\Users\harry\Source\Repos\watanaberyunosuke\BookStore\BookStore\obj\Debug\Book
 C:\Users\harry\Source\Repos\watanaberyunosuke\BookStore\BookStore\obj\Debug\BookStore.csproj.CopyComplete
 C:\Users\harry\Source\Repos\watanaberyunosuke\BookStore\BookStore\obj\Debug\BookStore.dll
 C:\Users\harry\Source\Repos\watanaberyunosuke\BookStore\BookStore\obj\Debug\BookStore.pdb
+C:\Users\harry\source\repos\watanaberyunosuke\BookStore\BookStore\bin\PagedList.dll
+C:\Users\harry\source\repos\watanaberyunosuke\BookStore\BookStore\bin\PagedList.Mvc.dll
+C:\Users\harry\source\repos\watanaberyunosuke\BookStore\BookStore\bin\PagedList.xml
+C:\Users\harry\source\repos\watanaberyunosuke\BookStore\BookStore\bin\PagedList.Mvc.xml
