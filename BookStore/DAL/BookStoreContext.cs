@@ -16,6 +16,7 @@ namespace BookStore.DAL
         public DbSet<Book> Books { get; set; }
         
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
