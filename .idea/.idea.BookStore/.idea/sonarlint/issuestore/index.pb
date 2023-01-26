@@ -9,10 +9,6 @@ J
 BookStore/BookStore.csproj,7/8/78d571e829ec1585e67dd79e1a9d31bcab40975f
 S
 #BookStore/App_Start/BundleConfig.cs,5/c/5c22c1be4fef7e229b3821c40fb651b94f2d5fdb
-W
-'BookStore/Controllers/BookController.cs,f\4\f464b7acdd3d16bb9c3e2314a22ffe3e3f3699d2
-Q
-!BookStore/Views/Book/Index.cshtml,4\9\49728890c4990467327c3c8aa73139c14d90e565
 U
 %BookStore/Migrations/Configuration.cs,8\3\83dd559c19fc36ad4fa6025281a2df6f19633592
 Q
@@ -23,8 +19,6 @@ S
 #BookStore/Views/Home/Contact.cshtml,2\5\254c1f1384251e7cc675cbf1a14f41f7bce38b3b
 U
 %BookStore/Views/Shared/_Layout.cshtml,3\d\3d593f65a52724d6ef572b02ffd8da98e0225929
-U
-%BookStore/Views/Customer/Index.cshtml,0\5\05d975941c4fc5c7fb025b2bbe1bf7fe4622f984
 D
 BookStore/.gitignore,3\b\3b613abdd20ceb5460008916290ff02982d57887
 W
@@ -33,9 +27,11 @@ W
 +BookStore/Controllers/CustomerController.cs,c\a\caa15a3c8e134ff8447c4008b2e3f5c67483d35a
 L
 BookStore/Models/Customer.cs,d\7\d7dac572c1fcbb6c494cf63434b2f949c87c8799
-H
-BookStore/Models/Book.cs,c\e\cee67f453080dde83a60302be3dfb49851b6284e
+U
+%BookStore/Views/Customer/Index.cshtml,0\5\05d975941c4fc5c7fb025b2bbe1bf7fe4622f984
+X
+(BookStore/Views/Reservation/Index.cshtml,b\1\b1043cc1680d7a975d52067bdbebf85d7b288f6e
 Q
 !BookStore/Views/Home/Index.cshtml,9\1\91c9130e26210f6a13a97c7166852bcc9e585df4
-N
-BookStore/DAL/DbInitialiser.cs,1\4\14274b907655508ed269b0bece0090b253cbef0c
+^
+.BookStore/Controllers/ReservationController.cs,5\4\54369162888c6f3f69f3285e7f6bdf7f56673525

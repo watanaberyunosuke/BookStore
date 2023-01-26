@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using BookStore.DAL;
 using BookStore.Models;
@@ -14,9 +15,14 @@ namespace BookStore.Controllers
         private BookStoreContext db = new BookStoreContext();
 
         // GET: Book
-        public ActionResult Index()
+        public ActionResult Index(string searchCriteria)
         {
-            return View(db.Books.ToList());
+            if(searchCriteria != null) {
+                return View(db.Books.Where(book => book.BookTitle.Contains(searchCriteria) || searchCriteria == null));
+            } else
+            {
+                return View(db.Books.ToList());
+            }
         }
 
         // GET: Book/Details/5
