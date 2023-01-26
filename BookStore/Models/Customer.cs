@@ -12,9 +12,9 @@ namespace BookStore.Models
         
             // Constructors
             public Customer()
-    {
-    
-    }
+            {
+            
+            }
 
             public Customer(Guid id, String name, String lastName, String email)
             {
