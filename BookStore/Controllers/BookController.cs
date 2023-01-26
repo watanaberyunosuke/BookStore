@@ -4,7 +4,6 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using PagedList.Mvc;
 using BookStore.DAL;
 using BookStore.Models;
 using PagedList;

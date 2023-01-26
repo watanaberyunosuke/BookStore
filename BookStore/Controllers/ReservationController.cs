@@ -46,18 +46,35 @@ namespace BookStore.Controllers
         }
 
         // POST: Reservation/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ReservationId,CustomerId,BookId,ReservationDate")] Reservation reservation)
         {
             if (ModelState.IsValid)
             {
-                reservation.ReservationId = Guid.NewGuid();
-                db.Reservations.Add(reservation);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (db.Books.Find(reservation.BookId).Reserved == true)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    reservation.ReservationId = Guid.NewGuid();
+                    db.Reservations.Add(reservation);
+
+                    try
+                    {
+                        db.Books.Find(reservation.BookId).Reserved = true;
+                        return RedirectToAction("Index");
+                    }
+                    catch (NullReferenceException e)
+                    {
+                        return new HttpNotFoundResult(e.Message);
+                    }
+                    finally
+                    {
+                        db.SaveChanges();
+                    }
+                }
             }
 
             ViewBag.BookId = new SelectList(db.Books, "BookId", "BookTitle", reservation.BookId);
