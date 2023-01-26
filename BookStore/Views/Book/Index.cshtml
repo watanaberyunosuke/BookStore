@@ -9,6 +9,16 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+<!-- Search functionality -->
+@using (Html.BeginForm("Index", "Book", FormMethod.Get))
+{
+    <b>Search Title: </b> 
+    @Html.TextBox("searchCriteria")
+    <input type="submit" name="submit" value="Search" />
+}
+
+<!-- Tableau View -->
 <table class="table">
     <tr>
         <th>
