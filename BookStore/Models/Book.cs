@@ -7,7 +7,7 @@ namespace BookStore.Models
     {
         public Guid BookId { get; set; }
         public String BookTitle { get; set; }
-        
+
         // Constructor
         public Book(Guid bookId, String bookTitle)
         {

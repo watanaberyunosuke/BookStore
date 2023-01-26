@@ -10,20 +10,29 @@ namespace BookStore.DAL
         {
             var books = new List<Book>
             {
-                new Book(Guid.Parse("9b0896fa-3880-4c2e-bfd6-925c87f22878"), "CQRS for Dummies"),
-                new Book(Guid.Parse("0550818d-36ad-4a8d-9c3a-a715bf15de76"), "Visual Studio Tips"),
-                new Book(Guid.Parse("8e0f11f1-be5c-4dbc-8012-c19ce8cbe8e1"), "NHibernate Cookbook")
+                new Book(Guid.Parse("1278A6C0-3338-4C45-8222-9B19F01461F0"), "CQRS for Dummies"),
+                new Book(Guid.Parse("942E5171-95DE-45CF-B951-C18D659EACB0"), "Visual Studio Tips"),
+                new Book(Guid.Parse("BE4C1039-31A3-4E6B-8563-ACA05EBDAF53"), "NHibernate Cookbook")
             };
 
             var customers = new List<Customer>
             {
-                new Customer(Guid.NewGuid(), "John", "Doe", "JD@gmail.com"),
-                new Customer(Guid.NewGuid(), "Jane", "Doe", "JD2@gmail.com"),
-                new Customer(Guid.NewGuid(), "Jack", "Doe", "JD3@gmail.com")
+                new Customer(Guid.Parse("192468C6-901C-4B24-BC66-4B11730ADD9C"), "John", "Doe", "JD@gmail.com"),
+                new Customer(Guid.Parse("FAF9130A-8829-41F2-A4D5-6A2F6FA23D5E"), "Jane", "Doe", "JD2@gmail.com"),
+                new Customer(Guid.Parse("24B2D0B0-0F86-4C1C-B04B-DA08E7E632EB"), "Jack", "Doe", "JD3@gmail.com")
+            };
+
+            var reserves = new List<Reservation>
+            {
+                new Reservation(Guid.NewGuid(), Guid.Parse("192468C6-901C-4B24-BC66-4B11730ADD9C"),
+                    Guid.Parse("1278A6C0-3338-4C45-8222-9B19F01461F0"), DateTime.Now),
+                new Reservation(Guid.NewGuid(), Guid.Parse("24B2D0B0-0F86-4C1C-B04B-DA08E7E632EB"),
+                    Guid.Parse("942E5171-95DE-45CF-B951-C18D659EACB0"), DateTime.Now)
             };
 
             context.Customers.AddRange(customers);
             context.Books.AddRange(books);
+            context.Reservations.AddRange(reserves);
             context.SaveChanges();
         }
     }
