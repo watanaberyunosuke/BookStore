@@ -1,8 +1,11 @@
-﻿@{
+﻿@using BookStore.Models
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Welcome to bookstore management system</p>
+    <p>@Html.ActionLink("Books", "Index", "Book") </p>
+    <p>@Html.ActionLink("Customers", "Index", "Customer") </p>
 </div>

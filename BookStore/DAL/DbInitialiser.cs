@@ -14,7 +14,15 @@ namespace BookStore.DAL
                 new Book(Guid.Parse("0550818d-36ad-4a8d-9c3a-a715bf15de76"), "Visual Studio Tips"),
                 new Book(Guid.Parse("8e0f11f1-be5c-4dbc-8012-c19ce8cbe8e1"), "NHibernate Cookbook")
             };
-            
+
+            var customers = new List<Customer>
+            {
+                new Customer(Guid.NewGuid(), "John", "Doe", "JD@gmail.com"),
+                new Customer(Guid.NewGuid(), "Jane", "Doe", "JD2@gmail.com"),
+                new Customer(Guid.NewGuid(), "Jack", "Doe", "JD3@gmail.com")
+            };
+
+            context.Customers.AddRange(customers);
             context.Books.AddRange(books);
             context.SaveChanges();
         }
