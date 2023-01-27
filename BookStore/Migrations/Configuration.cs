@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace BookStore.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<BookStore.DAL.BookStoreContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<BookStore.Models.BookStoreDbContext>
     {
         public Configuration()
         {

@@ -56,6 +56,7 @@ namespace BookStore.Controllers
             {
                 reservation.ReservationId = Guid.NewGuid();
                 db.Reservations.Add(reservation);
+                db.Books.Find(reservation.BookId).Reserved = true;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

@@ -1,4 +1,7 @@
-﻿@model IEnumerable<BookStore.Models.Book>
+﻿@using BookStore.Models
+@using PagedList
+@using PagedList.Mvc
+@model IEnumerable<BookStore.Models.Book>
 
 @{
     ViewBag.Title = "Index";
@@ -18,32 +21,53 @@
     <input type="submit" name="submit" value="Search" />
 }
 
-<!-- Tableau View -->
-<table class="table">
+@if (Model.Count() == 0)
+{
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.BookId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BookTitle)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookTitle)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.BookId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.BookId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.BookId })
-        </td>
+        <td colspan="2">Record not found</td>
     </tr>
 }
+else
+{
+    <!-- Tableau View -->
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reserved)
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reserved)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BookId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.BookId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BookId })
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+<!-- Paging -->
+<b>Page Number: </b>
+@Html.PagedListPager((IPagedList)Model, pageNumber => Url.Action("Index", new {pageNumber}))
+
+
