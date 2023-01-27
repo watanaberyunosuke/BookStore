@@ -5,6 +5,7 @@ using System.Net;
 using System.Web.Mvc;
 using BookStore.DAL;
 using BookStore.Models;
+using BookStoreContext = BookStore.DAL.BookStoreContext;
 
 namespace BookStore
 {
