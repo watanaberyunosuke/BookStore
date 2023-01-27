@@ -18,10 +18,10 @@ namespace BookStore.Controllers
         public ActionResult Index(string searchCriteria, int? pageNumber)
         {
             if(searchCriteria != null) {
-                return View(db.Books.Where(book => book.BookTitle.Contains(searchCriteria) || searchCriteria == null).ToList().ToPagedList(pageNumber ?? 1, 3));
+                return View(db.Books.Where(book => book.BookTitle.Contains(searchCriteria) || searchCriteria == null).ToList().ToPagedList(pageNumber ?? 1, 4));
             } else
             {
-                return View(db.Books.ToList().ToPagedList(pageNumber ?? 1, 3));
+                return View(db.Books.ToList().ToPagedList(pageNumber ?? 1, 4));
             }
         }
 

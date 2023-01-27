@@ -25,9 +25,9 @@ namespace BookStore.DAL
             var reserves = new List<Reservation>
             {
                 new Reservation(Guid.NewGuid(), Guid.Parse("192468C6-901C-4B24-BC66-4B11730ADD9C"),
-                    Guid.Parse("1278A6C0-3338-4C45-8222-9B19F01461F0"), DateTime.Now),
+                    Guid.Parse("1278A6C0-3338-4C45-8222-9B19F01461F0"), DateTime.Now.Date),
                 new Reservation(Guid.NewGuid(), Guid.Parse("24B2D0B0-0F86-4C1C-B04B-DA08E7E632EB"),
-                    Guid.Parse("942E5171-95DE-45CF-B951-C18D659EACB0"), DateTime.Now)
+                    Guid.Parse("942E5171-95DE-45CF-B951-C18D659EACB0"), DateTime.Now.Date)
             };
 
             context.Customers.AddRange(customers);
