@@ -24,7 +24,7 @@ namespace BookStore.Models
         
     }
 
-    public class BookStoreDbContext : DbContext
+    public class BookStoreContext : DbContext
     {
         public DbSet<Book> Books { get; set; }
     }

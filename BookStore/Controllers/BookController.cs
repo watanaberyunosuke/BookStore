@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using BookStore.DAL;
 using BookStore.Models;
 using PagedList;
+using BookStoreContext = BookStore.DAL.BookStoreContext;
 
 namespace BookStore.Controllers
 {

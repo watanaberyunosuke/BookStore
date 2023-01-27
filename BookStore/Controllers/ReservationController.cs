@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using BookStore.DAL;
 using BookStore.Models;
+using BookStoreContext = BookStore.DAL.BookStoreContext;
 
 namespace BookStore.Controllers
 {
@@ -109,6 +110,7 @@ namespace BookStore.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Reservation reservation = db.Reservations.Find(id);
+            
             if (reservation == null)
             {
                 return HttpNotFound();
@@ -123,6 +125,7 @@ namespace BookStore.Controllers
         {
             Reservation reservation = db.Reservations.Find(id);
             db.Reservations.Remove(reservation);
+            db.Books.Find(reservation.BookId).Reserved = false;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

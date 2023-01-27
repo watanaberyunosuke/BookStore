@@ -19,9 +19,25 @@ I
 BookStore/packages.config,6\b\6b12c5a43bd5e2861a8965e8980a7d7f043d01ed
 O
 BookStore/Content/PagedList.css,3\f\3fa61532662514ca9db36341fde0338f0568341d
-H
-BookStore/Models/Book.cs,c\e\cee67f453080dde83a60302be3dfb49851b6284e
-Q
-!BookStore/DAL/BookStoreContext.cs,f\8\f82121f66ba0a3991f5f97db2100ca2e8d6d3fff
 L
 BookStore/Models/Customer.cs,d\7\d7dac572c1fcbb6c494cf63434b2f949c87c8799
+Q
+!BookStore/Views/_ViewStart.cshtml,3\b\3b0e4083d139d940a3c180197ebdbe96a0708b0f
+O
+BookStore/Models/Reservation.cs,b\0\b08476d92dc13124e9f18e3c26d057c33ea2d72c
+Q
+!BookStore/Views/Book/Index.cshtml,4\9\49728890c4990467327c3c8aa73139c14d90e565
+D
+BookStore/.gitignore,3\b\3b613abdd20ceb5460008916290ff02982d57887
+Q
+!BookStore/Views/Home/Index.cshtml,9\1\91c9130e26210f6a13a97c7166852bcc9e585df4
+Y
+)BookStore/Views/Reservation/Create.cshtml,d\e\de62efd19f4959d154ce9458b3a3641b6fdb376c
+W
+'BookStore/Views/Reservation/Edit.cshtml,f\4\f4a8cd169aab586b9ed3d3aacb210e95b3e0d61c
+X
+(BookStore/Views/Reservation/Index.cshtml,b\1\b1043cc1680d7a975d52067bdbebf85d7b288f6e
+Z
+*BookStore/Views/Reservation/Details.cshtml,7\2\729221b85f778ad771ffd46828b5485296963079
+Y
+)BookStore/Views/Reservation/Delete.cshtml,b\9\b9aa52d9effbc68197df0fe1a0bfcd3c5b0ad822
