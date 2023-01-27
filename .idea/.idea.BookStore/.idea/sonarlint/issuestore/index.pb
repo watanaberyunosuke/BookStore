@@ -9,8 +9,6 @@ S
 #BookStore/Views/Home/Contact.cshtml,2\5\254c1f1384251e7cc675cbf1a14f41f7bce38b3b
 U
 %BookStore/Views/Shared/_Layout.cshtml,3\d\3d593f65a52724d6ef572b02ffd8da98e0225929
-D
-BookStore/.gitignore,3\b\3b613abdd20ceb5460008916290ff02982d57887
 W
 'BookStore/Controllers/HomeController.cs,1\6\16ca3767c2e2ad90e10a2f4e144c14ce1464a6c4
 U
