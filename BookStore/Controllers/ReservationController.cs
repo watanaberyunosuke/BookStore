@@ -64,7 +64,15 @@ namespace BookStore.Controllers
                         db.Books.Find(reservation.BookId).Reserved = true;
                         db.SaveChanges();
                         
+                    } 
+                    else 
+                    {
+                        Response.Write("<script>alert('This book is reserved')</script>");
                     }
+                }
+                else
+                {
+                    Response.Write("<script>alert('Invalid book id')</script>");
                 }
 
                 return RedirectToAction("Index");
