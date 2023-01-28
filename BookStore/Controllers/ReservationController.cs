@@ -55,10 +55,18 @@ namespace BookStore.Controllers
         {
             if (ModelState.IsValid)
             {
-                reservation.ReservationId = Guid.NewGuid();
-                db.Reservations.Add(reservation);
-                db.Books.Find(reservation.BookId).Reserved = true;
-                db.SaveChanges();
+                if (db.Books.Find(reservation.BookId).BookId != null)
+                {
+                    if (db.Books.Find(reservation.BookId).Reserved == false)
+                    {
+                        reservation.ReservationId = Guid.NewGuid();
+                        db.Reservations.Add(reservation);
+                        db.Books.Find(reservation.BookId).Reserved = true;
+                        db.SaveChanges();
+                        
+                    }
+                }
+
                 return RedirectToAction("Index");
             }
 
